@@ -1,36 +1,166 @@
-{% load static %}
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Django Girls blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        
-
-        <div class="page-header">
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
-
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% for post in posts %}
-                        <div class="post">
-                            <div class="date">
-                                <p>publicado: {{ post.published_date }}</p>
-                            </div>
-                            <h2><a href="">{{ post.title }}</a></h2>
-                            <p>{{ post.text|linebreaksbr }}</p>
-                        </div>
-                    {% endfor %}
+<head>
+    <title>Productos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            background-color: #8e8d8a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            font-size: 2em;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        img {
+            border-radius: 8px;
+            max-width: 200px;
+            height: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .details {
+            max-width: 500px;
+        }
+        .details strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .details .price {
+            font-size: 1.5em;
+            color: #d9534f;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Productos</h1>
+    <div class="container">
+        <ul>
+            <li>
+                <img src='https://www.allrecipes.com/thmb/sYbmpNZhPVYvQA2yUWqjx1q42T0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/65338-Birria-de-Res-Tacos-ddmfs-4x3-2563-ca793a7c87c54af5ab600fd463ba2467.jpg' alt='Foto de Taco de res'>
+                <div class="details">
+                    <strong>Tipo de Carne:</strong> Res
+                    <strong>Tipo de Bebida:</strong> Coca-Cola
+                    <strong>Nombre:</strong> Taco de res
+                    <strong>Precio:</strong> <span class="price">$150.00</span>
                 </div>
-            </div>
-        </div>
-
-        
-    </body>
+            </li>
+            <li>
+                <img src='https://s3.abcstatics.com/media/gurmesevilla/2010/03/pollo-asado-citricos-1920.jpg' alt='Foto de Pollo asado'>
+                <div class="details">
+                    <strong>Tipo de Carne:</strong> Pollo
+                    <strong>Tipo de Bebida:</strong> Pepsi
+                    <strong>Nombre:</strong> Pollo asado
+                    <strong>Precio:</strong> <span class="price">$120.00</span>
+                </div>
+            </li>
+            <li>
+                <img src='https://i.blogs.es/5fc93e/1/1366_2000.jpg' alt='Foto de Costilla BBQ'>
+                <div class="details">
+                    <strong>Tipo de Carne:</strong> Cerdo
+                    <strong>Tipo de Bebida:</strong> Fanta
+                    <strong>Nombre:</strong> Costilla BBQ
+                    <strong>Precio:</strong> <span class="price">$180.00</span>
+                </div>
+            </li>
+            <li>
+                <img src='https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/4e4293857c03d819e4ae51de1e86d66a.jpg' alt='Foto de Hamburguesa de res'>
+                <div class="details">
+                    <strong>Tipo de Carne:</strong> Res
+                    <strong>Tipo de Bebida:</strong> Sprite
+                    <strong>Nombre:</strong> Hamburguesa de res
+                    <strong>Precio:</strong> <span class="price">$130.00</span>
+                </div>
+            </li>
+            <li>
+                <img src='https://www.elespectador.com/resizer/uUoauSWVGKsTDm3yZIJJh2i6rhs=/arc-anglerfish-arc2-prod-elespectador/public/RZZPPJROZZDVBOUKBH6BANBR7U.jpg' alt='Foto de Alitas de pollo'>
+                <div class="details">
+                    <strong>Tipo de Carne:</strong> Pollo
+                    <strong>Tipo de Bebida:</strong> Agua mineral
+                    <strong>Nombre:</strong> Alitas de pollo
+                    <strong>Precio:</strong> <span class="price">$100.00</span>
+                </div>
+            </li>
+            <li>
+                <img src='https://desarrollostaging.es/blog/wp-content/uploads/2023/11/salchichas_alemanas.jpg' alt='Foto de Salchicha alemana'>
+                <div class="details">
+                    <strong>Tipo de Carne:</strong> Cerdo
+                    <strong>Tipo de Bebida:</strong> Cerveza
+                    <strong>Nombre:</strong> Salchicha alemana
+                    <strong>Precio:</strong> <span class="price">$140.00</span>
+                </div>
+            </li>
+            <li>
+                <img src='https://www.goya.com/media/4081/bistec-encebollado_steak-and-onions.jpg?quality=80' alt='Foto de Bistec de res'>
+                <div class="details">
+                    <strong>Tipo de Carne:</strong> Res
+                    <strong>Tipo de Bebida:</strong> Jugo de naranja
+                    <strong>Nombre:</strong> Bistec de res
+                    <strong>Precio:</strong> <span class="price">$200.00</span>
+                </div>
+            </li>
+            <li>
+                <img src='https://cdn0.recetasgratis.net/es/posts/1/4/5/pechugas_de_pollo_empanizadas_41541_orig.jpg' alt='Foto de Pechuga empanizada'>
+                <div class="details">
+                    <strong>Tipo de Carne:</strong> Pollo
+                    <strong>Tipo de Bebida:</strong> Limonada
+                    <strong>Nombre:</strong> Pechuga empanizada
+                    <strong>Precio:</strong> <span class="price">$110.00</span>
+                </div>
+            </li>
+            <li>
+                <img src='https://upload.wikimedia.org/wikipedia/commons/2/25/Chorizos_P6021974.jpg' alt='Foto de Chorizo parrillero'>
+                <div class="details">
+                    <strong>Tipo de Carne:</strong> Cerdo
+                    <strong>Tipo de Bebida:</strong> Vino tinto
+                    <strong>Nombre:</strong> Chorizo parrillero
+                    <strong>Precio:</strong> <span class="price">$160.00</span>
+                </div>
+            </li>
+            <li>
+                <img src='https://i.blogs.es/d7b0f2/dap-1---2023-04-18t095651.278/450_1000.jpg' alt='Foto de Filete de res'>
+                <div class="details">
+                    <strong>Tipo de Carne:</strong> Res
+                    <strong>Tipo de Bebida:</strong> Té helado
+                    <strong>Nombre:</strong> Filete de res
+                    <strong>Precio:</strong> <span class="price">$220.00</span>
+                </div>
+            </li>
+            <li>
+                <img src="https://www.onceuponachef.com/images/2023/08/Beef-Tacos.jpg" alt='Foto de tacos 2'>
+                <div class="details">
+                    <strong>Tipo de Carne:</strong> Res
+                    <strong>Tipo de Bebida:</strong> Pepsi
+                    <strong>Nombre:</strong> Tacos 2
+                    <strong>Precio:</strong> <span class="price">$150.00</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
 </html>
 

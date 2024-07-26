@@ -1,166 +1,305 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Productos</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            background-color: #8e8d8a;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin: 0;
-            font-size: 2em;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            padding: 20px;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-        img {
-            border-radius: 8px;
-            max-width: 200px;
-            height: auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .details {
-            max-width: 500px;
-        }
-        .details strong {
-            display: block;
-            margin-bottom: 5px;
-            color: #555;
-        }
-        .details .price {
-            font-size: 1.5em;
-            color: #d9534f;
-            margin-top: 10px;
-        }
-    </style>
+<title>Productos</title>
+<style>
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0d1b2a;
+  color: #f0f4f8;
+}
+
+h1 {
+  color: #1b9aa0;
+  text-align: center;
+  padding: 20px;
+  font-size: 2.5em;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.menu {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.menu-item {
+  cursor: pointer;
+  padding: 15px;
+  background-color: #1f3a5f;
+  margin: 10px 0;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu-item:hover {
+  background-color: #1a2b3c;
+  transform: translateY(-3px);
+}
+
+.product-details {
+  display: none;
+  background-color: #1e2a38;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.product-details img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #1b9aa0;
+}
+
+.product-details strong {
+  color: #1b9aa0;
+}
+
+.product-details p {
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+.product-details span {
+  color: #f0f4f8;
+  font-weight: bold;
+}
+</style>
+<script>
+function toggleDetails(id) {
+  var element = document.getElementById(id);
+  if (element.style.display === 'none') {
+    element.style.display = 'block';
+  } else {
+    element.style.display = 'none';
+  }
+}
+</script>
 </head>
 <body>
-    <h1>Lista de Productos</h1>
-    <div class="container">
-        <ul>
-            <li>
-                <img src='https://www.allrecipes.com/thmb/sYbmpNZhPVYvQA2yUWqjx1q42T0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/65338-Birria-de-Res-Tacos-ddmfs-4x3-2563-ca793a7c87c54af5ab600fd463ba2467.jpg' alt='Foto de Taco de res'>
-                <div class="details">
-                    <strong>Tipo de Carne:</strong> Res
-                    <strong>Tipo de Bebida:</strong> Coca-Cola
-                    <strong>Nombre:</strong> Taco de res
-                    <strong>Precio:</strong> <span class="price">$150.00</span>
-                </div>
-            </li>
-            <li>
-                <img src='https://s3.abcstatics.com/media/gurmesevilla/2010/03/pollo-asado-citricos-1920.jpg' alt='Foto de Pollo asado'>
-                <div class="details">
-                    <strong>Tipo de Carne:</strong> Pollo
-                    <strong>Tipo de Bebida:</strong> Pepsi
-                    <strong>Nombre:</strong> Pollo asado
-                    <strong>Precio:</strong> <span class="price">$120.00</span>
-                </div>
-            </li>
-            <li>
-                <img src='https://i.blogs.es/5fc93e/1/1366_2000.jpg' alt='Foto de Costilla BBQ'>
-                <div class="details">
-                    <strong>Tipo de Carne:</strong> Cerdo
-                    <strong>Tipo de Bebida:</strong> Fanta
-                    <strong>Nombre:</strong> Costilla BBQ
-                    <strong>Precio:</strong> <span class="price">$180.00</span>
-                </div>
-            </li>
-            <li>
-                <img src='https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/4e4293857c03d819e4ae51de1e86d66a.jpg' alt='Foto de Hamburguesa de res'>
-                <div class="details">
-                    <strong>Tipo de Carne:</strong> Res
-                    <strong>Tipo de Bebida:</strong> Sprite
-                    <strong>Nombre:</strong> Hamburguesa de res
-                    <strong>Precio:</strong> <span class="price">$130.00</span>
-                </div>
-            </li>
-            <li>
-                <img src='https://www.elespectador.com/resizer/uUoauSWVGKsTDm3yZIJJh2i6rhs=/arc-anglerfish-arc2-prod-elespectador/public/RZZPPJROZZDVBOUKBH6BANBR7U.jpg' alt='Foto de Alitas de pollo'>
-                <div class="details">
-                    <strong>Tipo de Carne:</strong> Pollo
-                    <strong>Tipo de Bebida:</strong> Agua mineral
-                    <strong>Nombre:</strong> Alitas de pollo
-                    <strong>Precio:</strong> <span class="price">$100.00</span>
-                </div>
-            </li>
-            <li>
-                <img src='https://desarrollostaging.es/blog/wp-content/uploads/2023/11/salchichas_alemanas.jpg' alt='Foto de Salchicha alemana'>
-                <div class="details">
-                    <strong>Tipo de Carne:</strong> Cerdo
-                    <strong>Tipo de Bebida:</strong> Cerveza
-                    <strong>Nombre:</strong> Salchicha alemana
-                    <strong>Precio:</strong> <span class="price">$140.00</span>
-                </div>
-            </li>
-            <li>
-                <img src='https://www.goya.com/media/4081/bistec-encebollado_steak-and-onions.jpg?quality=80' alt='Foto de Bistec de res'>
-                <div class="details">
-                    <strong>Tipo de Carne:</strong> Res
-                    <strong>Tipo de Bebida:</strong> Jugo de naranja
-                    <strong>Nombre:</strong> Bistec de res
-                    <strong>Precio:</strong> <span class="price">$200.00</span>
-                </div>
-            </li>
-            <li>
-                <img src='https://cdn0.recetasgratis.net/es/posts/1/4/5/pechugas_de_pollo_empanizadas_41541_orig.jpg' alt='Foto de Pechuga empanizada'>
-                <div class="details">
-                    <strong>Tipo de Carne:</strong> Pollo
-                    <strong>Tipo de Bebida:</strong> Limonada
-                    <strong>Nombre:</strong> Pechuga empanizada
-                    <strong>Precio:</strong> <span class="price">$110.00</span>
-                </div>
-            </li>
-            <li>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/2/25/Chorizos_P6021974.jpg' alt='Foto de Chorizo parrillero'>
-                <div class="details">
-                    <strong>Tipo de Carne:</strong> Coche
-                    <strong>Tipo de Bebida:</strong> Vino tinto
-                    <strong>Nombre:</strong> Chorizo parrillero
-                    <strong>Precio:</strong> <span class="price">$160.00</span>
-                </div>
-            </li>
-            <li>
-                <img src='https://i.blogs.es/d7b0f2/dap-1---2023-04-18t095651.278/450_1000.jpg' alt='Foto de Filete de res'>
-                <div class="details">
-                    <strong>Tipo de Carne:</strong> Res
-                    <strong>Tipo de Bebida:</strong> Té helado
-                    <strong>Nombre:</strong> Filete de res
-                    <strong>Precio:</strong> <span class="price">$220.00</span>
-                </div>
-            </li>
-            <li>
-                <img src="https://www.onceuponachef.com/images/2023/08/Beef-Tacos.jpg" alt='Foto taquero'>
-                <div class="details">
-                    <strong>Tipo de Carne:</strong> Res
-                    <strong>Tipo de Bebida:</strong> Pepsi
-                    <strong>Nombre:</strong> Tacos 2
-                    <strong>Precio:</strong> <span class="price">$150.00</span>
-                </div>
-            </li>
-        </ul>
-    </div>
+<h1>Lista de Computadoras</h1>
+<div class='menu'>
+<div class='menu-item' onclick='toggleDetails("product-0")'>
+Teclado Mecanico
+</div>
+<div id='product-0' class='product-details'>
+<strong>Codigo:</strong> COD001<br>
+<strong>Nombre:</strong> Teclado Mecanico<br>
+<strong>Modelo:</strong> MK100<br>
+<strong>Fabricante:</strong> Logitech<br>
+<strong>Descripcion:</strong> Teclado RGB con switches mecanicos<br>
+<strong>Precio:</strong> $79<br>
+<img src='https://cdn2.unrealengine.com/mechanical-keyboard-diagonal-4080x2295-d50ff434f19c.jpg' alt='Foto de Teclado Mecanico'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-1")'>
+Raton Inalambrico
+</div>
+<div id='product-1' class='product-details'>
+<strong>Codigo:</strong> COD002<br>
+<strong>Nombre:</strong> Raton Inalambrico<br>
+<strong>Modelo:</strong> RX200<br>
+<strong>Fabricante:</strong> Logitech<br>
+<strong>Descripcion:</strong> Raton ergonomico con bateria recargable<br>
+<strong>Precio:</strong> $49<br>
+<img src='https://m.media-amazon.com/images/I/61XAvLvufAL._AC_SL1500_.jpg' alt='Foto de Ratan Inalambrico'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-2")'>
+Monitor 4K
+</div>
+<div id='product-2' class='product-details'>
+<strong>Codigo:</strong> COD003<br>
+<strong>Nombre:</strong> Monitor 4K<br>
+<strong>Modelo:</strong> UHD27<br>
+<strong>Fabricante:</strong> Samsung<br>
+<strong>Descripcion:</strong> Monitor UHD de 27 pulgadas<br>
+<strong>Precio:</strong> $32<br>
+<img src='https://elektragt.vtexassets.com/arquivos/ids/191564/Monitor-para-PC-LG-de-24-pulgadas-24MP60G-B-28010253--9-.jpg?v=638276304006800000' alt='Foto de Monitor 4K'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-3")'>
+Portatil Gaming
+</div>
+<div id='product-3' class='product-details'>
+<strong>Codigo:</strong> COD004<br>
+<strong>Nombre:</strong> Portatil Gaming<br>
+<strong>Modelo:</strong> G17<br>
+<strong>Fabricante:</strong> ASUS<br>
+<strong>Descripcion:</strong> Portatil de alta gama para gaming<br>
+<strong>Precio:</strong> $14<br>
+<img src='https://walmartgt.vtexassets.com/arquivos/ids/425907/Laptop-Hp-Gaming-Victus-15-fb0122la-15-1-Pulgadas-3-64588.jpg?v=638363830599200000' alt='Foto de Portatil Gaming'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-4")'>
+Auriculares Bluetooth
+</div>
+<div id='product-4' class='product-details'>
+<strong>Codigo:</strong> COD005<br>
+<strong>Nombre:</strong> Auriculares Bluetooth<br>
+<strong>Modelo:</strong> BTX520<br>
+<strong>Fabricante:</strong> BTX520<br>
+<strong>Descripcion:</strong> BTX520<br>
+<strong>Precio:</strong> $BT<br>
+<img src='https://www.steren.com.gt/media/catalog/product/cache/b69086f136192bea7a4d681a8eaf533d/image/22190c9d8/audifonos-bluetooth-freepods-touch-true-wireless-para-gamers-negros.jpg' alt='Foto de Auriculares Bluetooth'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-5")'>
+Smartwatch
+</div>
+<div id='product-5' class='product-details'>
+<strong>Codigo:</strong> COD006<br>
+<strong>Nombre:</strong> Smartwatch<br>
+<strong>Modelo:</strong> S3<br>
+<strong>Fabricante:</strong> Apple<br>
+<strong>Descripcion:</strong> Reloj inteligente con multiples funciones<br>
+<strong>Precio:</strong> $39<br>
+<img src='https://i5.walmartimages.com/asr/dda6bc1f-d282-4cf9-ad29-e827222bc4d5.8d402328f4d54e2b9a252879ec51fb79.jpeg' alt='Foto de Smartwatch'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-6")'>
+Tablet 10"
+</div>
+<div id='product-6' class='product-details'>
+<strong>Codigo:</strong> COD007<br>
+<strong>Nombre:</strong> Tablet 10"<br>
+<strong>Modelo:</strong> TabA10<br>
+<strong>Fabricante:</strong> Samsung<br>
+<strong>Descripcion:</strong> Tablet de 10 pulgadas con Android<br>
+<strong>Precio:</strong> $24<br>
+<img src='https://images-cdn.ubuy.co.in/633b51122af1ce605a57ae50-10-1.jpg' alt='Foto de Tablet 10"'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-7")'>
+Impresora Laser
+</div>
+<div id='product-7' class='product-details'>
+<strong>Codigo:</strong> COD008<br>
+<strong>Nombre:</strong> Impresora Laser<br>
+<strong>Modelo:</strong> LaserJetP1102<br>
+<strong>Fabricante:</strong> HP<br>
+<strong>Descripcion:</strong> Impresora laser monocromo<br>
+<strong>Precio:</strong> $12<br>
+<img src='https://proinfoaccesorios.com/wp-content/uploads/2023/01/Impresora-Laser-Multifuncional-Monocromatica-Lexmark-MX521ade-2.jpg' alt='Foto de Impresora Laser'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-8")'>
+Disco Duro Externo
+</div>
+<div id='product-8' class='product-details'>
+<strong>Codigo:</strong> COD009<br>
+<strong>Nombre:</strong> Disco Duro Externo<br>
+<strong>Modelo:</strong> HDD1TB<br>
+<strong>Fabricante:</strong> Western Digital<br>
+<strong>Descripcion:</strong> Disco duro externo de 1TB<br>
+<strong>Precio:</strong> $59<br>
+<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWPo2U9lH9w5NlvZWKbZ0RzsNufwFxAvyJxw&s' alt='Foto de Disco Duro Externo'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-9")'>
+Camara Digital
+</div>
+<div id='product-9' class='product-details'>
+<strong>Codigo:</strong> COD010<br>
+<strong>Nombre:</strong> Camara Digital<br>
+<strong>Modelo:</strong> CybershotDSC-W800<br>
+<strong>Fabricante:</strong> Sony<br>
+<strong>Descripcion:</strong> Camara compacta de 20.1MP<br>
+<strong>Precio:</strong> $99<br>
+<img src='https://inresa.gt/cdn/shop/files/pag-SON-F-C-ZV-1-5.png?v=1688682649&width=1445' alt='Foto de Camara Digital'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-10")'>
+Altavoz Bluetooth
+</div>
+<div id='product-10' class='product-details'>
+<strong>Codigo:</strong> COD011<br>
+<strong>Nombre:</strong> Altavoz Bluetooth<br>
+<strong>Modelo:</strong> SoundLinkMiniII<br>
+<strong>Fabricante:</strong> Bose<br>
+<strong>Descripcion:</strong> Altavoz portatil con gran calidad de sonido<br>
+<strong>Precio:</strong> $17<br>
+<img src='https://walmartgt.vtexassets.com/arquivos/ids/467519/Bocina-Durabrand-Bt-10W-2500-Mah-Bt138-1-54683.jpg?v=638419042513530000' alt='Foto de Altavoz Bluetooth'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-11")'>
+Microondas
+</div>
+<div id='product-11' class='product-details'>
+<strong>Codigo:</strong> COD012<br>
+<strong>Nombre:</strong> Microondas<br>
+<strong>Modelo:</strong> QuickHeat700<br>
+<strong>Fabricante:</strong> LG<br>
+<strong>Descripcion:</strong> Microondas con funcion de grill<br>
+<strong>Precio:</strong> $14<br>
+<img src='https://walmartgt.vtexassets.com/arquivos/ids/467519/Bocina-Durabrand-Bt-10W-2500-Mah-Bt138-1-54683.jpg?v=638419042513530000' alt='Foto de Microondas'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-12")'>
+Aspiradora Robot
+</div>
+<div id='product-12' class='product-details'>
+<strong>Codigo:</strong> COD013<br>
+<strong>Nombre:</strong> Aspiradora Robot<br>
+<strong>Modelo:</strong> RoboVac11S<br>
+<strong>Fabricante:</strong> Eufy<br>
+<strong>Descripcion:</strong> Aspiradora robot con deteccion de obstaculos<br>
+<strong>Precio:</strong> $22<br>
+<img src='https://evvohome.com/cdn/shop/articles/1._Como_Elegir_un_Robot_Aspirador_1024x.png?v=1703863149' alt='Foto de Aspiradora Robot'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-13")'>
+Smart TV
+</div>
+<div id='product-13' class='product-details'>
+<strong>Codigo:</strong> COD014<br>
+<strong>Nombre:</strong> Smart TV<br>
+<strong>Modelo:</strong> QLED55Q80T<br>
+<strong>Fabricante:</strong> Samsung<br>
+<strong>Descripcion:</strong> Televisor QLED de 55 pulgadas<br>
+<strong>Precio:</strong> $99<br>
+<img src='https://elektragt.vtexassets.com/arquivos/ids/163203/1009070-1.jpg?v=637505579298700000' alt='Foto de Smart TV'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-14")'>
+Refrigerador
+</div>
+<div id='product-14' class='product-details'>
+<strong>Codigo:</strong> COD015<br>
+<strong>Nombre:</strong> Refrigerador<br>
+<strong>Modelo:</strong> NoFrostX500<br>
+<strong>Fabricante:</strong> LG<br>
+<strong>Descripcion:</strong> Refrigerador con sistema No Frost<br>
+<strong>Precio:</strong> $11<br>
+<img src='https://sears.com.gt/wp-content/uploads/imgSears/352113.jpg' alt='Foto de Refrigerador'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-15")'>
+Mi maus
+</div>
+<div id='product-15' class='product-details'>
+<strong>Codigo:</strong> 43345<br>
+<strong>Nombre:</strong> Mi maus<br>
+<strong>Modelo:</strong> saber<br>
+<strong>Fabricante:</strong> razer<br>
+<strong>Descripcion:</strong> aslkdasd<br>
+<strong>Precio:</strong> $16<br>
+<img src='https://m.media-amazon.com/images/I/61M9TBM9HaL._AC_SL1500_.jpg' alt='Foto de Mi maus'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-16")'>
+mau
+</div>
+<div id='product-16' class='product-details'>
+<strong>Codigo:</strong> 38372<br>
+<strong>Nombre:</strong> mau<br>
+<strong>Modelo:</strong> asdasds<br>
+<strong>Fabricante:</strong> logi<br>
+<strong>Descripcion:</strong> saber<br>
+<strong>Precio:</strong> $50<br>
+<img src='https://m.media-amazon.com/images/I/61M9TBM9HaL._AC_SL1500_.jpg' alt='Foto de mau'><br>
+</div>
+<div class='menu-item' onclick='toggleDetails("product-17")'>
+victus
+</div>
+<div id='product-17' class='product-details'>
+<strong>Codigo:</strong> 94334<br>
+<strong>Nombre:</strong> victus<br>
+<strong>Modelo:</strong> akskadsj<br>
+<strong>Fabricante:</strong> kasdkj<br>
+<strong>Descripcion:</strong> aksdkj<br>
+<strong>Precio:</strong> $78<br>
+<img src='https://m.media-amazon.com/images/I/61M9TBM9HaL._AC_SL1500_.jpg' alt='Foto de victus'><br>
+</div>
+</div>
 </body>
 </html>
 
